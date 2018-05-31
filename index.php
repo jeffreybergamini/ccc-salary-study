@@ -203,7 +203,10 @@ if (isset($_GET['report'])
 <?php
 for ($i = 0; $i < count($reports); ++$i) {
   $desc = $reports[$i]['description'];
-  echo "<button type='submit' name='report' value='$i'>$desc</button>";
+  $style = '';
+  if ($i == $_GET['report'])
+    $style = " class='active-button'";
+  echo "<button type='submit' name='report' value='$i'$style>$desc</button>";
 }
 ?>
 </form>
