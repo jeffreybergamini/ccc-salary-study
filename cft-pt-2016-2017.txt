@@ -1,0 +1,360 @@
+Allan Hancock Joint	0	1	52.92
+Antelope Valley	0	1	71.51
+Barstow	0	1	51
+Butte	0	1	52.46
+Cabrillo	0	1	68.8
+Cerritos	0	1	61.03
+Chabot-Las Positas	0	1	82.6
+Chaffey	0	1	71
+Citrus	0	1	67.31428571
+Coast	0	1	59.5
+Compton	0	1	42.66
+Contra Costa	0	1	68.53
+Copper Mountain	0	1	51.29
+Desert	0	1	55.25
+El Camino	0	1	86.21
+Feather River	0	1	44.46
+Foothill-DeAnza	0	1	95.52
+Gavilan	0	1	66.044
+Glendale	0	1	61.43
+Grossmont-Cuyamaca	0	1	60.45
+Hartnell	0	1	57.75
+Imperial	0	1	65
+Kern	0	1	60
+Lake Tahoe	0	1	46.78
+Lassen	0	1	38.72
+Long Beach	0	1	57.71
+Los Angeles	0	1	96.1
+Los Rios	0	1	63.28
+Marin	0	1	106.88
+Mendocino-Lake	0	1	54.86
+Merced	0	1	48.95
+Mira Costa	0	1	73.12
+Monterey Peninsula	0	1	48.16
+Mt. San Antonio	0	1	77.12
+Mt. San Jacinto	0	1	54.84
+Napa Valley	0	1	57.07
+North Orange Co	0	1	63.928
+Ohlone	0	1	69.75
+Palo Verde	0	1	54.66
+Palomar	0	1	58.87
+Pasadena Area	0	1	58.69
+Peralta	0	1	55.44
+Rancho Santiago	0	1	57.09
+Redwoods	0	1	59.08
+Rio Hondo	0	1	63.96
+Riverside	0	1	68.82
+San Bernardino	0	1	60
+San Diego	0	1	63.3
+San Francisco	0	1	94.35
+San Joaquin Delta	0	1	57.02
+San Jose/Evergreen	0	1	83.76
+San Luis Obispo Co	0	1	51.52
+San Mateo Co	0	1	65.13
+Santa Barbara	0	1	74.63
+Santa Clarita	0	1	60.28
+Santa Monica	0	1	83.33333333
+Sequoias	0	1	53.88
+Shasta-Teh.-Tri.	0	1	51.51
+Sierra Joint	0	1	58.44
+Siskiyou Joint	0	1	52.86
+Solano Co	0	1	60.14
+Sonoma Co	0	1	93.11
+South Orange Co	0	1	76.63
+Southwestern	0	1	71.86
+State Center	0	1	48.83
+Ventura Co	0	1	71.35
+Victor Valley	0	1	58
+West Hills	0	1	68
+West Kern	0	1	56.68
+West Valley-Mission	0	1	90.7
+Yosemite	0	1	48.23
+Yuba	0	1	48.61
+Allan Hancock Joint	0	5	57.73
+Antelope Valley	0	5	74.73
+Barstow	0	5	51
+Butte	0	5	55.08
+Cabrillo	0	5	80.86
+Cerritos	0	5	74.76
+Chabot-Las Positas	0	5	98.37
+Chaffey	0	5	76
+Citrus	0	5	69.94285714
+Coast	0	5	76.56
+Compton	0	5	47.2
+Contra Costa	0	5	73.69
+Copper Mountain	0	5	51.29
+Desert	0	5	67.82
+El Camino	0	5	100.32
+Feather River	0	5	49.25
+Foothill-DeAnza	0	5	105.34
+Gavilan	0	5	73.88
+Glendale	0	5	66.75
+Grossmont-Cuyamaca	0	5	66.99
+Hartnell	0	5	62.47
+Imperial	0	5	65
+Kern	0	5	62.5
+Lake Tahoe	0	5	46.78
+Lassen	0	5	38.72
+Long Beach	0	5	70.09
+Los Angeles	0	5	105.89
+Los Rios	0	5	68.43
+Marin	0	5	114.78
+Mendocino-Lake	0	5	57.61
+Merced	0	5	49.88
+Mira Costa	0	5	88.44
+Monterey Peninsula	0	5	57.19
+Mt. San Antonio	0	5	82.62
+Mt. San Jacinto	0	5	57.51
+Napa Valley	0	5	64.19
+North Orange Co	0	5	74.79
+Ohlone	0	5	84.79
+Palo Verde	0	5	57.99
+Palomar	0	5	65.9
+Pasadena Area	0	5	69.87
+Peralta	0	5	62.27
+Rancho Santiago	0	5	62.94
+Redwoods	0	5	63.83
+Rio Hondo	0	5	76.93
+Riverside	0	5	79.49
+San Bernardino	0	5	60
+San Diego	0	5	66.84
+San Francisco	0	5	102.97
+San Joaquin Delta	0	5	68.78
+San Jose/Evergreen	0	5	96.21
+San Luis Obispo Co	0	5	57.11
+San Mateo Co	0	5	80.35
+Santa Barbara	0	5	85.1
+Santa Clarita	0	5	64.5
+Santa Monica	0	5	97.61111111
+Sequoias	0	5	59.36
+Shasta-Teh.-Tri.	0	5	53.76
+Sierra Joint	0	5	59.61
+Siskiyou Joint	0	5	52.86
+Solano Co	0	5	69.77
+Sonoma Co	0	5	98.68
+South Orange Co	0	5	76.63
+Southwestern	0	5	75.44
+State Center	0	5	49.79
+Ventura Co	0	5	77.26
+Victor Valley	0	5	58
+West Hills	0	5	68
+West Kern	0	5	66.6
+West Valley-Mission	0	5	107.72
+Yosemite	0	5	52.5
+Yuba	0	5	67.44
+Allan Hancock Joint	30	10	65.68
+Antelope Valley	30	10	81.14
+Barstow	30	10	51
+Butte	30	10	63.77
+Cabrillo	30	10	101.1428571
+Cerritos	30	10	76.64
+Chabot-Las Positas	30	10	114.13
+Chaffey	30	10	76
+Citrus	30	10	76.86
+Coast	30	10	86.83
+Compton	30	10	49.66
+Contra Costa	30	10	91.67
+Copper Mountain	30	10	51.29
+Desert	30	10	67.82
+El Camino	30	10	103.85
+Feather River	30	10	56.25
+Foothill-DeAnza	30	10	124.77
+Gavilan	30	10	88.01
+Glendale	30	10	75.64
+Grossmont-Cuyamaca	30	10	76.16
+Hartnell	30	10	70.27
+Imperial	30	10	65
+Kern	30	10	62.5
+Lake Tahoe	30	10	49.16
+Lassen	30	10	38.72
+Long Beach	30	10	77.56
+Los Angeles	30	10	116.98
+Los Rios	30	10	81.41
+Marin	30	10	132.78
+Mendocino-Lake	30	10	66.68
+Merced	30	10	55.38
+Mira Costa	30	10	112.83
+Monterey Peninsula	30	10	72.25
+Mt. San Antonio	30	10	85.52
+Mt. San Jacinto	30	10	60.19
+Napa Valley	30	10	72.21
+North Orange Co	30	10	74.79
+Ohlone	30	10	84.79
+Palo Verde	30	10	57.99
+Palomar	30	10	70.96
+Pasadena Area	30	10	83.85
+Peralta	30	10	80.91
+Rancho Santiago	30	10	69.39
+Redwoods	30	10	70.42
+Rio Hondo	30	10	96.75
+Riverside	30	10	79.49
+San Bernardino	30	10	60
+San Diego	30	10	77.79
+San Francisco	30	10	115.8868571
+San Joaquin Delta	30	10	79.92
+San Jose/Evergreen	30	10	114.51
+San Luis Obispo Co	30	10	71.34
+San Mateo Co	30	10	98.5
+Santa Barbara	30	10	92.96
+Santa Clarita	30	10	66.44
+Santa Monica	30	10	136.1666667
+Sequoias	30	10	59.36
+Shasta-Teh.-Tri.	30	10	58.21
+Sierra Joint	30	10	62.12
+Siskiyou Joint	30	10	55.52
+Solano Co	30	10	76.98
+Sonoma Co	30	10	104.25
+South Orange Co	30	10	79.58
+Southwestern	30	10	81.14
+State Center	30	10	53.44
+Ventura Co	30	10	83.24
+Victor Valley	30	10	60
+West Hills	30	10	69
+West Kern	30	10	66.6
+West Valley-Mission	30	10	132.42
+Yosemite	30	10	61.93
+Yuba	30	10	76.82
+Allan Hancock Joint	60	0	74.15
+Antelope Valley	60	0	81.14
+Barstow	60	0	51
+Butte	60	0	70.29
+Cabrillo	60	0	108.9714286
+Cerritos	60	0	76.64
+Chabot-Las Positas	60	0	114.13
+Chaffey	60	0	76
+Citrus	60	0	80.05714286
+Coast	60	0	86.83
+Compton	60	0	68.83
+Contra Costa	60	0	112.23
+Copper Mountain	60	0	51.29
+Desert	60	0	67.82
+El Camino	60	0	103.85
+Feather River	60	0	72.12
+Foothill-DeAnza	60	0	139.35
+Gavilan	60	0	88.014
+Glendale	60	0	75.64
+Grossmont-Cuyamaca	60	0	86.59
+Hartnell	60	0	73.08
+Imperial	60	0	65
+Kern	60	0	62.5
+Lake Tahoe	60	0	49.16
+Lassen	60	0	38.72
+Long Beach	60	0	77.56
+Los Angeles	60	0	116.98
+Los Rios	60	0	131.48
+Marin	60	0	173.45
+Mendocino-Lake	60	0	70.02
+Merced	60	0	60.92
+Mira Costa	60	0	115.44
+Monterey Peninsula	60	0	78.08
+Mt. San Antonio	60	0	88.53
+Mt. San Jacinto	60	0	60.19
+Napa Valley	60	0	72.21
+North Orange Co	60	0	74.79
+Ohlone	60	0	84.79
+Palo Verde	60	0	57.99
+Palomar	60	0	70.96
+Pasadena Area	60	0	95.03
+Peralta	60	0	121.37
+Rancho Santiago	60	0	69.39
+Redwoods	60	0	94.42
+Rio Hondo	60	0	123.08
+Riverside	60	0	79.49
+San Bernardino	60	0	60
+San Diego	60	0	83.01
+San Francisco	60	0	154.65
+San Joaquin Delta	60	0	82.79
+San Jose/Evergreen	60	0	121.38
+San Luis Obispo Co	60	0	99.47
+San Mateo Co	60	0	98.5
+Santa Barbara	60	0	95.98
+Santa Clarita	60	0	66.44
+Santa Monica	60	0	188.5
+Sequoias	60	0	59.36
+Shasta-Teh.-Tri.	60	0	61.6
+Sierra Joint	60	0	91.43
+Siskiyou Joint	60	0	61.21
+Solano Co	60	0	81.79
+Sonoma Co	60	0	122.31
+South Orange Co	60	0	85.48
+Southwestern	60	0	84.59
+State Center	60	0	60.04
+Ventura Co	60	0	89.22
+Victor Valley	60	0	62
+West Hills	60	0	70
+West Kern	60	0	66.6
+West Valley-Mission	60	0	146.81
+Yosemite	60	0	76.64
+Yuba	60	0	81.63
+Allan Hancock Joint	100	0	78.62
+Antelope Valley	100	0	83.93
+Barstow	100	0	51
+Butte	100	0	70.29
+Cabrillo	100	0	113.4285714
+Cerritos	100	0	79.31
+Chabot-Las Positas	100	0	114.13
+Chaffey	100	0	76
+Citrus	100	0	80.06
+Coast	100	0	86.83
+Compton	100	0	68.83
+Contra Costa	100	0	112.23
+Copper Mountain	100	0	53.39
+Desert	100	0	71.36
+El Camino	100	0	103.85
+Feather River	100	0	73.83
+Foothill-DeAnza	100	0	139.35
+Gavilan	100	0	91.64
+Glendale	100	0	75.64
+Grossmont-Cuyamaca	100	0	86.59
+Hartnell	100	0	76
+Imperial	100	0	65
+Kern	100	0	62.5
+Lake Tahoe	100	0	49.16
+Lassen	100	0	38.72
+Long Beach	100	0	77.56
+Los Angeles	100	0	119.29
+Los Rios	100	0	138.05
+Marin	100	0	177.74
+Mendocino-Lake	100	0	73.52
+Merced	100	0	60.92
+Mira Costa	100	0	118.04
+Monterey Peninsula	100	0	81.42
+Mt. San Antonio	100	0	88.53
+Mt. San Jacinto	100	0	60.19
+Napa Valley	100	0	72.21
+North Orange Co	100	0	78.339
+Ohlone	100	0	84.79
+Palo Verde	100	0	66.64
+Palomar	100	0	72.65
+Pasadena Area	100	0	97.84
+Peralta	100	0	121.37
+Rancho Santiago	100	0	69.39
+Redwoods	100	0	94.42
+Rio Hondo	100	0	126.65
+Riverside	100	0	79.49
+San Bernardino	100	0	60
+San Diego	100	0	83.01
+San Francisco	100	0	154.65
+San Joaquin Delta	100	0	85.1
+San Jose/Evergreen	100	0	124.53
+San Luis Obispo Co	100	0	102.4
+San Mateo Co	100	0	98.5
+Santa Barbara	100	0	99.18
+Santa Clarita	100	0	73.08
+Santa Monica	100	0	193.4444444
+Sequoias	100	0	60.61
+Shasta-Teh.-Tri.	100	0	63.4988
+Sierra Joint	100	0	96.01
+Siskiyou Joint	100	0	61.21
+Solano Co	100	0	84.77
+Sonoma Co	100	0	124.76
+South Orange Co	100	0	85.48
+Southwestern	100	0	88.66
+State Center	100	0	60.04
+Ventura Co	100	0	101.07
+Victor Valley	100	0	68.25
+West Hills	100	0	70
+West Kern	100	0	66.6
+West Valley-Mission	100	0	146.81
+Yosemite	100	0	78.89
+Yuba	100	0	83.33

@@ -1,0 +1,360 @@
+Allan Hancock Joint	0	1	55988
+Antelope Valley	0	1	55264
+Barstow	0	1	54324
+Butte	0	1	53242
+Cabrillo	0	1	55376
+Cerritos	0	1	63237
+Chabot-Las Positas	0	1	60228
+Chaffey	0	1	59581
+Citrus	0	1	58616
+Coast	0	1	56013
+Compton	0	1	59503
+Contra Costa	0	1	58452
+Copper Mountain	0	1	49534
+Desert	0	1	63579
+El Camino	0	1	65575
+Feather River	0	1	52788
+Foothill-DeAnza	0	1	60121
+Gavilan	0	1	59678
+Glendale	0	1	60655
+Grossmont-Cuyamaca	0	1	51279
+Hartnell	0	1	54331
+Imperial	0	1	51473
+Kern	0	1	69814
+Lake Tahoe	0	1	53930
+Lassen	0	1	54687
+Long Beach	0	1	65624
+Los Angeles	0	1	57400
+Los Rios	0	1	48535
+Marin	0	1	59064
+Mendocino-Lake	0	1	55645
+Merced	0	1	50868
+Mira Costa	0	1	72754
+Monterey Peninsula	0	1	53058
+Mt. San Antonio	0	1	64546
+Mt. San Jacinto	0	1	53402
+Napa Valley	0	1	48648
+North Orange Co	0	1	64829
+Ohlone	0	1	65656
+Palo Verde	0	1	54661
+Palomar	0	1	61053
+Pasadena Area	0	1	68804
+Peralta	0	1	40179
+Rancho Santiago	0	1	58339
+Redwoods	0	1	48314
+Rio Hondo	0	1	55966
+Riverside	0	1	59061
+San Bernardino	0	1	51672
+San Diego	0	1	56589
+San Francisco	0	1	57600
+San Joaquin Delta	0	1	57017
+San Jose/Evergreen	0	1	66242
+San Luis Obispo Co	0	1	50040
+San Mateo Co	0	1	65268
+Santa Barbara	0	1	58038
+Santa Clarita	0	1	58104
+Santa Monica	0	1	62923
+Sequoias	0	1	57943
+Shasta-Teh.-Tri.	0	1	52626
+Sierra Joint	0	1	52162
+Siskiyou Joint	0	1	51277
+Solano Co	0	1	49966
+Sonoma Co	0	1	66598
+South Orange Co	0	1	69678
+Southwestern	0	1	54903
+State Center	0	1	57745
+Ventura Co	0	1	48751
+Victor Valley	0	1	51711
+West Hills	0	1	58157
+West Kern	0	1	52960
+West Valley-Mission	0	1	55565
+Yosemite	0	1	55384
+Yuba	0	1	54051
+Allan Hancock Joint	0	6	66175
+Antelope Valley	0	6	67662
+Barstow	0	6	65774
+Butte	0	6	66329
+Cabrillo	0	6	67703
+Cerritos	0	6	78630
+Chabot-Las Positas	0	6	74600
+Chaffey	0	6	72833
+Citrus	0	6	67258
+Coast	0	6	68352
+Compton	0	6	66513
+Contra Costa	0	6	66384
+Copper Mountain	0	6	60994
+Desert	0	6	77890
+El Camino	0	6	78980
+Feather River	0	6	65613
+Foothill-DeAnza	0	6	75394
+Gavilan	0	6	71690
+Glendale	0	6	72920
+Grossmont-Cuyamaca	0	6	58301
+Hartnell	0	6	67831
+Imperial	0	6	59671
+Kern	0	6	78988
+Lake Tahoe	0	6	65296
+Lassen	0	6	69121
+Long Beach	0	6	77902
+Los Angeles	0	6	68510
+Los Rios	0	6	59050
+Marin	0	6	69984
+Mendocino-Lake	0	6	68037
+Merced	0	6	62418
+Mira Costa	0	6	91819
+Monterey Peninsula	0	6	64439
+Mt. San Antonio	0	6	77429
+Mt. San Jacinto	0	6	61908
+Napa Valley	0	6	63280
+North Orange Co	0	6	73225
+Ohlone	0	6	78951
+Palo Verde	0	6	63368
+Palomar	0	6	74385
+Pasadena Area	0	6	68804
+Peralta	0	6	52524
+Rancho Santiago	0	6	70845
+Redwoods	0	6	58781
+Rio Hondo	0	6	70159
+Riverside	0	6	73166
+San Bernardino	0	6	62247
+San Diego	0	6	64821
+San Francisco	0	6	70745
+San Joaquin Delta	0	6	71720
+San Jose/Evergreen	0	6	78827
+San Luis Obispo Co	0	6	62563
+San Mateo Co	0	6	81096
+Santa Barbara	0	6	68226
+Santa Clarita	0	6	68832
+Santa Monica	0	6	81700
+Sequoias	0	6	68562
+Shasta-Teh.-Tri.	0	6	63111
+Sierra Joint	0	6	66574
+Siskiyou Joint	0	6	59731
+Solano Co	0	6	59957
+Sonoma Co	0	6	76559
+South Orange Co	0	6	81902
+Southwestern	0	6	66438
+State Center	0	6	71692
+Ventura Co	0	6	60939
+Victor Valley	0	6	63173
+West Hills	0	6	68909
+West Kern	0	6	66739
+West Valley-Mission	0	6	65994
+Yosemite	0	6	66648
+Yuba	0	6	65327
+Allan Hancock Joint	30	11	80426
+Antelope Valley	30	11	84374
+Barstow	30	11	81804
+Butte	30	11	83792
+Cabrillo	30	11	82367
+Cerritos	30	11	94023
+Chabot-Las Positas	30	11	92692
+Chaffey	30	11	89155
+Citrus	30	11	84839
+Coast	30	11	85103
+Compton	30	11	75896
+Contra Costa	30	11	85260
+Copper Mountain	30	11	81624
+Desert	30	11	103650
+El Camino	30	11	90717
+Feather River	30	11	81923
+Foothill-DeAnza	30	11	93722
+Gavilan	30	11	91737
+Glendale	30	11	88512
+Grossmont-Cuyamaca	30	11	73078
+Hartnell	30	11	84401
+Imperial	30	11	80192
+Kern	30	11	95624
+Lake Tahoe	30	11	81211
+Lassen	30	11	83451
+Long Beach	30	11	92138
+Los Angeles	30	11	85850
+Los Rios	30	11	79014
+Marin	30	11	84818
+Mendocino-Lake	30	11	83708
+Merced	30	11	79176
+Mira Costa	30	11	116075
+Monterey Peninsula	30	11	79585
+Mt. San Antonio	30	11	98838
+Mt. San Jacinto	30	11	85195
+Napa Valley	30	11	77545
+North Orange Co	30	11	90018
+Ohlone	30	11	94796
+Palo Verde	30	11	76954
+Palomar	30	11	91337
+Pasadena Area	30	11	83340
+Peralta	30	11	70584
+Rancho Santiago	30	11	88706
+Redwoods	30	11	75808
+Rio Hondo	30	11	87483
+Riverside	30	11	94399
+San Bernardino	30	11	77898
+San Diego	30	11	81844
+San Francisco	30	11	86523
+San Joaquin Delta	30	11	86417
+San Jose/Evergreen	30	11	94227
+San Luis Obispo Co	30	11	80115
+San Mateo Co	30	11	93732
+Santa Barbara	30	11	84668
+Santa Clarita	30	11	87144
+Santa Monica	30	11	97016
+Sequoias	30	11	79177
+Shasta-Teh.-Tri.	30	11	78839
+Sierra Joint	30	11	80150
+Siskiyou Joint	30	11	70800
+Solano Co	30	11	73945
+Sonoma Co	30	11	86520
+South Orange Co	30	11	97793
+Southwestern	30	11	82586
+State Center	30	11	88859
+Ventura Co	30	11	82874
+Victor Valley	30	11	81246
+West Hills	30	11	88262
+West Kern	30	11	85410
+West Valley-Mission	30	11	84370
+Yosemite	30	11	84994
+Yuba	30	11	81112
+Allan Hancock Joint	60	21	100389
+Antelope Valley	60	21	101086
+Barstow	60	21	106994
+Butte	60	21	102161
+Cabrillo	60	21	98298
+Cerritos	60	21	110953
+Chabot-Las Positas	60	21	107066
+Chaffey	60	21	102779
+Citrus	60	21	102423
+Coast	60	21	110177
+Compton	60	21	98877
+Contra Costa	60	21	101316
+Copper Mountain	60	21	96410
+Desert	60	21	113700
+El Camino	60	21	103811
+Feather River	60	21	96370
+Foothill-DeAnza	60	21	102886
+Gavilan	60	21	111264
+Glendale	60	21	105499
+Grossmont-Cuyamaca	60	21	94888
+Hartnell	60	21	105021
+Imperial	60	21	101586
+Kern	60	21	112940
+Lake Tahoe	60	21	106278
+Lassen	60	21	89605
+Long Beach	60	21	106487
+Los Angeles	60	21	106490
+Los Rios	60	21	109080
+Marin	60	21	112596
+Mendocino-Lake	60	21	104177
+Merced	60	21	91482
+Mira Costa	60	21	138452
+Monterey Peninsula	60	21	92453
+Mt. San Antonio	60	21	113431
+Mt. San Jacinto	60	21	117241
+Napa Valley	60	21	91529
+North Orange Co	60	21	106809
+Ohlone	60	21	123946
+Palo Verde	60	21	100996
+Palomar	60	21	105866
+Pasadena Area	60	21	100784
+Peralta	60	21	100741
+Rancho Santiago	60	21	109061
+Redwoods	60	21	105865
+Rio Hondo	60	21	104847
+Riverside	60	21	112513
+San Bernardino	60	21	101833
+San Diego	60	21	112094
+San Francisco	60	21	104921
+San Joaquin Delta	60	21	105254
+San Jose/Evergreen	60	21	112409
+San Luis Obispo Co	60	21	96681
+San Mateo Co	60	21	106296
+Santa Barbara	60	21	99616
+Santa Clarita	60	21	114420
+Santa Monica	60	21	119237
+Sequoias	60	21	93723
+Shasta-Teh.-Tri.	60	21	91982
+Sierra Joint	60	21	100358
+Siskiyou Joint	60	21	96652
+Solano Co	60	21	93853
+Sonoma Co	60	21	106359
+South Orange Co	60	21	129576
+Southwestern	60	21	102030
+State Center	60	21	106469
+Ventura Co	60	21	101883
+Victor Valley	60	21	108490
+West Hills	60	21	114070
+West Kern	60	21	102547
+West Valley-Mission	60	21	100447
+Yosemite	60	21	96511
+Yuba	60	21	103662
+Allan Hancock Joint	100	21	102889
+Antelope Valley	100	26	109474
+Barstow	100	20	109074
+Butte	100	24	109772
+Cabrillo	100	26	107955
+Cerritos	100	30	121725
+Chabot-Las Positas	100	27	117727
+Chaffey	100	22	114829
+Citrus	100	35	120376
+Coast	100	26	120543
+Compton	100	35	111721
+Contra Costa	100	25	104028
+Copper Mountain	100	14	100508
+Desert	100	40	119606
+El Camino	100	30	115404
+Feather River	100	21	97270
+Foothill-DeAnza	100	13	105940
+Gavilan	100	22	117117
+Glendale	100	31	117165
+Grossmont-Cuyamaca	100	30	102045
+Hartnell	100	20	108091
+Imperial	100	18	106586
+Kern	100	15	120845
+Lake Tahoe	100	20	108283
+Lassen	100	21	90105
+Long Beach	100	21	111135
+Los Angeles	100	28	117740
+Los Rios	100	21	114528
+Marin	100	24	122147
+Mendocino-Lake	100	26	108277
+Merced	100	38	110487
+Mira Costa	100	30	147856
+Monterey Peninsula	100	27	99911
+Mt. San Antonio	100	35	127074
+Mt. San Jacinto	100	16	130268
+Napa Valley	100	24	94808
+North Orange Co	100	25	116298
+Ohlone	100	21	129026
+Palo Verde	100	21	103176
+Palomar	100	40	122889
+Pasadena Area	100	33	118227
+Peralta	100	25	110421
+Rancho Santiago	100	24	115595
+Redwoods	100	21	107365
+Rio Hondo	100	25	110817
+Riverside	100	22	119021
+San Bernardino	100	24	110552
+San Diego	100	19	117708
+San Francisco	100	17	104921
+San Joaquin Delta	100	25	117025
+San Jose/Evergreen	100	19	115273
+San Luis Obispo Co	100	22	104577
+San Mateo Co	100	23	114912
+Santa Barbara	100	34	114564
+Santa Clarita	100	27	127524
+Santa Monica	100	22	124738
+Sequoias	100	35	122687
+Shasta-Teh.-Tri.	100	28	102512
+Sierra Joint	100	24	109592
+Siskiyou Joint	100	17	98452
+Solano Co	100	30	98825
+Sonoma Co	100	28	116828
+South Orange Co	100	26	140607
+Southwestern	100	25	110784
+State Center	100	30	114064
+Ventura Co	100	31	109684
+Victor Valley	100	20	108490
+West Hills	100	25	125838
+West Kern	100	26	117220
+West Valley-Mission	100	36	121686
+Yosemite	100	32	106068
+Yuba	100	29	113810

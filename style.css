@@ -1,0 +1,14 @@
+h2, h3 {
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  padding: 20px;
+}
+tr:hover {
+  background: cornflowerblue;
+}
+table {
+  border-collapse: collapse;
+}
+button:hover {
+  background: yellow;
+}
