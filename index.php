@@ -260,6 +260,7 @@ Notes:
 <li>Home loan qualification based the <a href="https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index/methodology">National Association of Realtors's housing affordability index</a>, with home values pulled from the <a href="https://www.zillow.com/research/data/">Zillow Home Value index</a>.</li>
 <li>Per CFT's data: <i>Full-time faculty were assumed to receive 75% of their annual salary for prep &amp; grading only (no office hours, no governance work) 30 hours/40 hours = .75.</i> Some part-time rates (including Cabrillo) included office hours, according to CFT's reports.</li>
 <li>Median home price and radius is calculated as follows: The centroid of a district's main ZIP code is considered the center point, and all other ZIP codes with centroids within the stated radius are also included in the calculuations. The price used here is the average of the Zillow Home Value index in those ZIP codes.</li>
+<li>Source code and data <a href="https://github.com/jeffreybergamini/ccc-salary-study">available on GitHub</a>.</li>
 </ul>
 </footer>
 </body>
