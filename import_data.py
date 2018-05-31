@@ -39,14 +39,13 @@ with sqlite3.connect('salary-data.sqlite') as conn:
         db.execute("INSERT INTO ft_salary (district, ma_plus, step, salary, hourly) VALUES (?, ?, ?, ?, ?)", (district, ma_plus, step, salary, hourly))
         cft_district_names.add(district)
 
-  # DB:  pt_salary (district TEXT, ma_plus INTEGER, step INTEGER, salary INTEGER, hourly REAL);
+  # DB:  pt_salary (district TEXT, ma_plus INTEGER, step INTEGER, hourly REAL);
   # File: district ma_plus step salary
   with open('cft-pt-2016-2017.txt') as pt_file:
     for pt_line in pt_file:
         tokens = pt_line.split('\t')
         district, ma_plus, step, hourly = tokens[0], int(tokens[1]), int(tokens[2]), float(tokens[3])
-        salary = hourly * 525 * 2 / 3
-        db.execute("INSERT INTO pt_salary (district, ma_plus, step, salary, hourly) VALUES (?, ?, ?, ?, ?)", (district, ma_plus, step, salary, hourly))
+        db.execute("INSERT INTO pt_salary (district, ma_plus, step, hourly) VALUES (?, ?, ?, ?)", (district, ma_plus, step, hourly))
         cft_district_names.add(district)
    
   # DB: CREATE TABLE district (district TEXT, zip INTEGER);

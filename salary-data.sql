@@ -12,7 +12,7 @@ CREATE INDEX ft_salary_salary_idx ON ft_salary (salary);
 -- ma_plus: 0 (MA), 30 (MA + 60 units), 60 (MA + 60 units), 100 (PhD)
 -- Steps: 1, 5, 10, 0 (max)
 -- ma+0step1, ma+0step5, ma+30step10, ma+60stepXX (not actually 60; highest w/out PhD), phdstepXX
-CREATE TABLE pt_salary (district TEXT, ma_plus INTEGER, step INTEGER, salary INTEGER, hourly REAL);
+CREATE TABLE pt_salary (district TEXT, ma_plus INTEGER, step INTEGER, hourly REAL);
 CREATE INDEX pt_salary_district_idx ON pt_salary (district);
 CREATE INDEX pt_salary_ma_plus_idx ON pt_salary (ma_plus);
 CREATE INDEX pt_salary_step_idx ON pt_salary (step);

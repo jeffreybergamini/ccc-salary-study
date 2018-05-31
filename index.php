@@ -1,4 +1,5 @@
 <?php
+session_start();
 class MyDB extends SQLite3 {
   function __construct() {
     $this->open('salary-data.sqlite');
@@ -43,35 +44,35 @@ $reports = array(
   ),
   array(
     'description' => "Part-Time Hourly Rates, Master's Degree, Step 1",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 0 and step = 1 group by district.district order by salary desc;",
+    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 0 and step = 1 group by district.district order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
   ),
   array(
     'description' => "Part-Time Hourly Rates, Master's Degree, Step 5",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 0 and step = 5 group by district.district order by salary desc;",
+    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 0 and step = 5 group by district.district order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
   ),
   array(
     'description' => "Part-Time Hourly Rates, Master's Degree + 30 Units, Step 10",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 30 and step = 10 group by district.district order by salary desc;",
+    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 30 and step = 10 group by district.district order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
   ),
   array(
     'description' => "Part-Time Hourly Rates, Maximum Without PhD",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 60 group by district.district order by salary desc;",
+    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 60 group by district.district order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
   ),
   array(
     'description' => "Part-Time Hourly Rates, Maximum With PhD",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 100 group by district.district order by salary desc;",
+    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 100 group by district.district order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
@@ -171,6 +172,13 @@ $reports = array(
   ),
 );
 
+if (isset($_GET['highlight'])) {
+  $_SESSION['highlight'] = $_GET['highlight'];
+  header('Location: '.$_SERVER['HTTP_REFERER']);
+} elseif (!isset($_SESSION['highlight'])) {
+  $_SESSION['highlight'] = 'Cabrillo';
+}
+
 if (isset($_GET['report'])
   and is_integer(intval($_GET['report']))
   and $_GET['report'] >= 0
@@ -214,6 +222,7 @@ for ($i = 0; $i < count($reports); ++$i) {
 <hr>
 <?php
 if (isset($report)) {
+  $highlight = urldecode($_SESSION['highlight']);
 ?>
   <h1><?=$report['description']?></h1>
   <table>
@@ -226,11 +235,11 @@ if (isset($report)) {
       .','
       .round((1-(floatval($i)/$numRows)) * 256)
       .',0)';
-    if ($results[$i]['district'] == 'Cabrillo')
+    if ($results[$i]['district'] == $highlight)
       $style = " style='background: yellow; font-weight: bold'";
     else
       $style = '';
-    echo "<tr$style><td>"
+    echo "<tr$style onclick='highlight(\"".$results[$i]['district']."\")'><td>"
       .($i + 1).' ';
     if ($i == floor($numRows / 4))
       echo '(End of first quartile)';
@@ -266,5 +275,10 @@ Notes:
 <li>Source code and data <a href="https://github.com/jeffreybergamini/ccc-salary-study">available on GitHub</a>.</li>
 </ul>
 </footer>
+<script>
+function highlight(district) {
+  window.location.replace('./?highlight='+district);
+}
+</script>
 </body>
 </html>
