@@ -105,38 +105,38 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
-    'description' => "FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius), Master's Degree, Step 1",
+    'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), Master's Degree, Step 1",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 00 and step = 1 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
-    'keydescription' => 'FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius)',
+    'keydescription' => 'FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius)',
     'type' => 'percentage'
   ),
   array(
-    'description' => "FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius), Master's Degree, Step 6",
+    'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), Master's Degree, Step 6",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 00 and step = 6 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
-    'keydescription' => 'FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius)',
+    'keydescription' => 'FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius)',
     'type' => 'percentage'
   ),
   array(
-    'description' => "FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius), Master's Degree + 30 Units, Step 11",
+    'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), Master's Degree + 30 Units, Step 11",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 30 and step = 11 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
-    'keydescription' => 'FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius)',
+    'keydescription' => 'FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius)',
     'type' => 'percentage'
   ),
   array(
-    'description' => "FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius), Master's Degree + 60 Units, Step 21",
+    'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), Master's Degree + 60 Units, Step 21",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 60 and step = 21 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
-    'keydescription' => 'FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius)',
+    'keydescription' => 'FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius)',
     'type' => 'percentage'
   ),
   array(
-    'description' => "FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius), PhD, Maximum Salary",
+    'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), PhD, Maximum Salary",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 100 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
-    'keydescription' => 'FT/Median-Home-Price Pro Rata (Zillow Home Value Index, 70 km radius)',
+    'keydescription' => 'FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius)',
     'type' => 'percentage'
   ),
   array(
@@ -199,12 +199,12 @@ if (isset($_GET['report'])
 <body>
 <header>
 <form action="#" method="GET">
-<h3>CCC Salary Study - <a href="/">Jeffrey Bergamini</a> - <a href="https://www.cabrillo.edu">Cabrillo College</a></h3>
+<h1>CCC Salary Study - <a href="/">Jeffrey Bergamini</a> - <a href="https://www.cabrillo.edu">Cabrillo College</a></h1>
 <?php
 for ($i = 0; $i < count($reports); ++$i) {
   $desc = $reports[$i]['description'];
   $style = '';
-  if ($i == $_GET['report'])
+  if (isset($_GET['report']) and $i == $_GET['report'])
     $style = " class='active-button'";
   echo "<button type='submit' name='report' value='$i'$style>$desc</button>";
 }
@@ -215,7 +215,7 @@ for ($i = 0; $i < count($reports); ++$i) {
 <?php
 if (isset($report)) {
 ?>
-  <h2><?=$report['description']?></h2>
+  <h1><?=$report['description']?></h1>
   <table>
   <tr><th>Rank</th><th>District</th><th><?=(isset($report) ? $report['keydescription'] : 'TBD')?></th></tr>
   <?php
@@ -260,7 +260,7 @@ if (isset($report)) {
 Notes:
 <ul>
 <li>Salary data courtesy Joanna Valentine at CFT, and is currently based on 2016-2017 salary schedules.</li>
-<li>Home loan qualification based the <a href="https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index/methodology">National Association of Realtors's housing affordability index</a>, with home values pulled from the <a href="https://www.zillow.com/research/data/">Zillow Home Value index</a>. Assumed interest rate is 4.5%.</li>
+<li>Home loan qualification based on the <a href="https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index/methodology">National Association of Realtors's qualifying income formula</a>, with home values pulled from the <a href="https://www.zillow.com/research/data/">Zillow Home Value index</a>. Assumed interest rate is 4.5%.</li>
 <li>Per CFT's data: <i>Full-time faculty were assumed to receive 75% of their annual salary for prep &amp; grading only (no office hours, no governance work) 30 hours/40 hours = .75.</i> Some part-time rates (including Cabrillo) included office hours, according to CFT's reports.</li>
 <li>Median home price and radius is calculated as follows: The centroid of a district's main ZIP code is considered the center point, and all other ZIP codes with centroids within the stated radius are also included in the calculuations. The price used here is the average of the Zillow Home Value index in those ZIP codes.</li>
 <li>Source code and data <a href="https://github.com/jeffreybergamini/ccc-salary-study">available on GitHub</a>.</li>

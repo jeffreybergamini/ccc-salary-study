@@ -1,7 +1,11 @@
-h2, h3 {
+body {
+}
+h1 {
+  font-size: 1.25em;
   border-radius: 20px;
   background-color: cornflowerblue;
   padding: 20px;
+  font-family: sans-serif;
 }
 tr:hover {
   background: cornflowerblue;
