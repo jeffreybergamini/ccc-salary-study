@@ -19,3 +19,10 @@ button:hover {
 .active-button {
   background: yellow;
 }
+.report-category {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 1px;
+  font-weight: bold;
+}

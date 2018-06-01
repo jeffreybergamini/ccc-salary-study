@@ -8,6 +8,7 @@ class MyDB extends SQLite3 {
 
 $reports = array(
   array(
+    'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, Master's Degree, Step 1",
     'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 0 and step = 1 group by district.district order by salary desc;",
     'key' =>  'salary',
@@ -15,6 +16,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, Master's Degree, Step 6",
     'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 0 and step = 6 group by district.district order by salary desc;",
     'key' =>  'salary',
@@ -22,6 +24,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, Master's Degree + 30 Units, Step 11",
     'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 30 and step = 11 group by district.district order by salary desc;",
     'key' =>  'salary',
@@ -29,6 +32,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, Master's Degree + 60 Units, Step 21",
     'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 60 and step = 21 group by district.district order by salary desc;",
     'key' =>  'salary',
@@ -36,6 +40,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, PhD, Maximum Salary",
     'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 100 group by district.district order by salary desc;",
     'key' =>  'salary',
@@ -43,6 +48,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Master's Degree, Step 1",
     'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 0 and step = 1 group by district.district order by hourly desc;",
     'key' =>  'hourly',
@@ -50,6 +56,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Master's Degree, Step 5",
     'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 0 and step = 5 group by district.district order by hourly desc;",
     'key' =>  'hourly',
@@ -57,6 +64,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Master's Degree + 30 Units, Step 10",
     'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 30 and step = 10 group by district.district order by hourly desc;",
     'key' =>  'hourly',
@@ -64,6 +72,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Maximum Without PhD",
     'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 60 group by district.district order by hourly desc;",
     'key' =>  'hourly',
@@ -71,6 +80,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Maximum With PhD",
     'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 100 group by district.district order by hourly desc;",
     'key' =>  'hourly',
@@ -78,6 +88,7 @@ $reports = array(
     'type' => 'dollars'
   ),
   array(
+    'category' => 'PT/FT Pro Rata',
     'description' => "PT/FT Pro Rata, Master's Degree, Step 1",
     'query' => "select district.district, ROUND(pt_salary.hourly / ft_salary.hourly, 3) as pro_rata from district join ft_salary on ft_salary.district = district.district and ft_salary.ma_plus = 0 and ft_salary.step = 1 join pt_salary on pt_salary.district = district.district and pt_salary.ma_plus = 0 and pt_salary.step = 1 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -85,6 +96,7 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'PT/FT Pro Rata',
     'description' => "PT/FT Pro Rata, Master's Degree, Steps 5 (PT) 6 (FT)",
     'query' => "select district.district, ROUND(pt_salary.hourly / ft_salary.hourly, 3) as pro_rata from district join ft_salary on ft_salary.district = district.district and ft_salary.ma_plus = 0 and ft_salary.step = 6 join pt_salary on pt_salary.district = district.district and pt_salary.ma_plus = 0 and pt_salary.step = 5 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -92,6 +104,7 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'PT/FT Pro Rata',
     'description' => "PT/FT Pro Rata, Master's Degree + 30 Units, Steps 10 (PT) 11 (FT)",
     'query' => "select district.district, ROUND(pt_salary.hourly / ft_salary.hourly, 3) as pro_rata from district join ft_salary on ft_salary.district = district.district and ft_salary.ma_plus = 30 and ft_salary.step = 11 join pt_salary on pt_salary.district = district.district and pt_salary.ma_plus = 30 and pt_salary.step = 10 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -99,6 +112,7 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'PT/FT Pro Rata',
     'description' => "PT/FT Pro Rata, PhD, Maximum Salary",
     'query' => "select district.district, ROUND(pt_salary.hourly / ft_salary.hourly, 3) as pro_rata from district join ft_salary on ft_salary.district = district.district and ft_salary.ma_plus = 100 join pt_salary on pt_salary.district = district.district and pt_salary.ma_plus = 100 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -106,6 +120,7 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), Master's Degree, Step 1",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 00 and step = 1 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -113,6 +128,7 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), Master's Degree, Step 6",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 00 and step = 6 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -120,6 +136,7 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), Master's Degree + 30 Units, Step 11",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 30 and step = 11 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -127,6 +144,7 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), Master's Degree + 60 Units, Step 21",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 60 and step = 21 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -134,6 +152,7 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "FT/Median-Home-Price Ratio (Zillow Home Value Index, 70 km radius), PhD, Maximum Salary",
     'query' => "select district.district, ft_salary.salary / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 100 group by district.district order by pro_rata desc;",
     'key' =>  'pro_rata',
@@ -141,34 +160,55 @@ $reports = array(
     'type' => 'percentage'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius), Master's Degree, Step 1",
     'query' => "select district.district, round(1.0 / (ft_salary.salary / avg(qinc)), 2) as incomes from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 00 and step = 1 group by district.district order by incomes desc;",
     'key' =>  'incomes',
     'keydescription' => 'Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius)'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius), Master's Degree, Step 6",
     'query' => "select district.district, round(1.0 / (ft_salary.salary / avg(qinc)), 2) as incomes from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 00 and step = 6 group by district.district order by incomes desc;",
     'key' =>  'incomes',
     'keydescription' => 'Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius)'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius), Master's Degree + 30 Units, Step 11",
     'query' => "select district.district, round(1.0 / (ft_salary.salary / avg(qinc)), 2) as incomes from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 30 and step = 11 group by district.district order by incomes desc;",
     'key' =>  'incomes',
     'keydescription' => 'Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius)'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius), Master's Degree + 60 Units, Step 21",
     'query' => "select district.district, round(1.0 / (ft_salary.salary / avg(qinc)), 2) as incomes from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 60 and step = 21 group by district.district order by incomes desc;",
     'key' =>  'incomes',
     'keydescription' => 'Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius)'
   ),
   array(
+    'category' => 'FT Salary vs. Cost of Living',
     'description' => "Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius), PhD, Maximum Salary",
     'query' => "select district.district, round(1.0 / (ft_salary.salary / avg(qinc)), 2) as incomes from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst where ft_salary.ma_plus = 100 group by district.district order by incomes desc;",
     'key' =>  'incomes',
     'keydescription' => 'Number of Full-Time Faculty Salaries to Qualify for a Loan on a Median-Priced Local Home (Zillow Home Value Index, 70 km radius)'
+  ),
+  array(
+    'category' => 'Overall Averages',
+    'description' => "Average Full-Time Salary",
+    'query' => "select district, avg(salary) as salary from ft_salary group by district order by avg(salary) desc;",
+    'key' =>  'salary',
+    'keydescription' => 'Average Full-Time Salary (all steps and education levels mentioned above)',
+    'type' => 'dollars'
+  ),
+  array(
+    'category' => 'Overall Averages',
+    'description' => "Average Part-Time Hourly Rate",
+    'query' => "select district, avg(hourly) as hourly from pt_salary group by district order by avg(hourly) desc;",
+    'key' =>  'hourly',
+    'keydescription' => 'Average Part-Time Hourly Rate (all steps and education levels mentioned above)',
+    'type' => 'dollars'
   ),
 );
 
@@ -201,15 +241,22 @@ if (isset($_GET['report'])
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>CCC Salary Study - Jeffrey Bergamini, Cabrillo College</title>
+    <title>CCC Salary Study - Jeffrey Bergamini - Cabrillo College</title>
     <link rel="stylesheet" href="style.css">
   </head>
 <body>
 <header>
-<form action="#" method="GET">
-<h1>CCC Salary Study - <a href="/">Jeffrey Bergamini</a> - <a href="https://www.cabrillo.edu">Cabrillo College</a></h1>
+<form action="." method="GET">
+<h1><a href=".">CCC Salary Study</a> - <a href="/">Jeffrey Bergamini</a> - <a href="https://www.cabrillo.edu">Cabrillo College</a></h1>
 <?php
+$prevCategory = '';
 for ($i = 0; $i < count($reports); ++$i) {
+  if ($reports[$i]['category'] != $prevCategory) {
+    if ($prevCategory != '')
+      echo '</div>';
+    echo '<div class="report-category">'.$reports[$i]['category'].': ';
+  }
+  $prevCategory = $reports[$i]['category'];
   $desc = $reports[$i]['description'];
   $style = '';
   if (isset($_GET['report']) and $i == $_GET['report'])
@@ -217,6 +264,7 @@ for ($i = 0; $i < count($reports); ++$i) {
   echo "<button type='submit' name='report' value='$i'$style>$desc</button>";
 }
 ?>
+</div>
 </form>
 </footer>
 <hr>
