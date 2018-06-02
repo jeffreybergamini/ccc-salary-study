@@ -36,7 +36,8 @@ with sqlite3.connect('salary-data.sqlite') as conn:
     for ft_line in ft_file:
         tokens = ft_line.split('\t')
         district, ma_plus, step, salary = tokens[0], int(tokens[1]), int(tokens[2]), int(tokens[3])
-        hourly = salary * .75 / 525
+        #hourly = salary * .75 / 525
+        hourly = salary / 525
         db.execute("INSERT INTO ft_salary (district, ma_plus, step, salary, hourly) VALUES (?, ?, ?, ?, ?)", (district, ma_plus, step, salary, hourly))
         cft_district_names.add(district)
 

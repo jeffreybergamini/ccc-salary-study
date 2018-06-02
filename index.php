@@ -318,7 +318,7 @@ Notes:
 <ul>
 <li>Salary data courtesy Joanna Valentine at CFT, and is currently based on 2016-2017 salary schedules.</li>
 <li>Home loan qualification based on the <a href="https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index/methodology">National Association of Realtors's qualifying income formula</a>, with home values pulled from the <a href="https://www.zillow.com/research/data/">Zillow Home Value index</a>. Assumed interest rate is 4.5%.</li>
-<li>Per CFT's data: <i>Full-time faculty were assumed to receive 75% of their annual salary for prep &amp; grading only (no office hours, no governance work) 30 hours/40 hours = .75.</i> This is the full-time rate used in pro-rata calculations. Some part-time rates (including Cabrillo) included office hours, according to CFT's reports.</li>
+<li>PT/FT pro rata is computed using 100% of both full-time and part-time rates, even though this includes pay for office hours in the case of full-time faculty and some part-time faculty, which results in undervaluing part-time rates in districts that provide extra pay for office hours.</li>
 <li>Median home price and radius is calculated as follows: All ZIP codes with centroids no further than the stated radius from the centroid of any ZIP code in the district are included in the calculuations. The price used here is the average of the Zillow Home Value index in those ZIP codes.</li>
 <li>Source code and data <a href="https://github.com/jeffreybergamini/ccc-salary-study">available on GitHub</a>.</li>
 </ul>
