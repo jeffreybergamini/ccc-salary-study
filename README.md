@@ -1,4 +1,4 @@
-# ccc-salary-study
+# California Community Colleges Salary Study
 
 * Salary data courtesy Joanna Valentine at CFT.
 
