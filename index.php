@@ -10,7 +10,7 @@ $reports = array(
   array(
     'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, Master's Degree, Step 1",
-    'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 0 and step = 1 group by district.district order by salary desc;",
+    'query' => "select district, salary from ft_salary where ft_salary.ma_plus = 0 and step = 1 order by salary desc;",
     'key' =>  'salary',
     'keydescription' => 'Full-Time Salary',
     'type' => 'dollars'
@@ -18,7 +18,7 @@ $reports = array(
   array(
     'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, Master's Degree, Step 6",
-    'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 0 and step = 6 group by district.district order by salary desc;",
+    'query' => "select district, salary from ft_salary where ft_salary.ma_plus = 0 and step = 6 order by salary desc;",
     'key' =>  'salary',
     'keydescription' => 'Full-Time Salary',
     'type' => 'dollars'
@@ -26,7 +26,7 @@ $reports = array(
   array(
     'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, Master's Degree + 30 Units, Step 11",
-    'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 30 and step = 11 group by district.district order by salary desc;",
+    'query' => "select district, salary from ft_salary where ft_salary.ma_plus = 30 and step = 11 order by salary desc;",
     'key' =>  'salary',
     'keydescription' => 'Full-Time Salary',
     'type' => 'dollars'
@@ -34,7 +34,7 @@ $reports = array(
   array(
     'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, Master's Degree + 60 Units, Step 21",
-    'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 60 and step = 21 group by district.district order by salary desc;",
+    'query' => "select district, salary from ft_salary where ft_salary.ma_plus = 60 and step = 21 order by salary desc;",
     'key' =>  'salary',
     'keydescription' => 'Full-Time Salary',
     'type' => 'dollars'
@@ -42,7 +42,7 @@ $reports = array(
   array(
     'category' => 'Full-Time Salaries',
     'description' => "Full-Time Salaries, PhD, Maximum Salary",
-    'query' => "select district.district, ft_salary.salary from district natural join ft_salary where ft_salary.ma_plus = 100 group by district.district order by salary desc;",
+    'query' => "select district, salary from ft_salary where ft_salary.ma_plus = 100 order by salary desc;",
     'key' =>  'salary',
     'keydescription' => 'Full-Time Salary',
     'type' => 'dollars'
@@ -50,7 +50,7 @@ $reports = array(
   array(
     'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Master's Degree, Step 1",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 0 and step = 1 group by district.district order by hourly desc;",
+    'query' => "select district, hourly from pt_salary where ma_plus = 0 and step = 1 order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
@@ -58,7 +58,7 @@ $reports = array(
   array(
     'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Master's Degree, Step 5",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 0 and step = 5 group by district.district order by hourly desc;",
+    'query' => "select district, hourly from pt_salary where ma_plus = 0 and step = 5 order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
@@ -66,7 +66,7 @@ $reports = array(
   array(
     'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Master's Degree + 30 Units, Step 10",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 30 and step = 10 group by district.district order by hourly desc;",
+    'query' => "select district, hourly from pt_salary where ma_plus = 30 and step = 10 order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
@@ -74,7 +74,7 @@ $reports = array(
   array(
     'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Maximum Without PhD",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 60 group by district.district order by hourly desc;",
+    'query' => "select district, hourly from pt_salary where ma_plus = 60 order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
@@ -82,7 +82,7 @@ $reports = array(
   array(
     'category' => 'Part-Time Hourly Rates',
     'description' => "Part-Time Hourly Rates, Maximum With PhD",
-    'query' => "select district.district, pt_salary.hourly from district natural join pt_salary where pt_salary.ma_plus = 100 group by district.district order by hourly desc;",
+    'query' => "select district, hourly from pt_salary where ma_plus = 100 order by hourly desc;",
     'key' =>  'hourly',
     'keydescription' => 'Part-Time Hourly Rate',
     'type' => 'dollars'
@@ -90,7 +90,7 @@ $reports = array(
   array(
     'category' => 'PT/FT Pro Rata',
     'description' => "PT/FT Pro Rata, Master's Degree, Step 1",
-    'query' => "select district.district, ROUND(pt_salary.hourly / ft_salary.hourly, 3) as pro_rata from district join ft_salary on ft_salary.district = district.district and ft_salary.ma_plus = 0 and ft_salary.step = 1 join pt_salary on pt_salary.district = district.district and pt_salary.ma_plus = 0 and pt_salary.step = 1 group by district.district order by pro_rata desc;",
+    'query' => "select ft_salary.district, pt_salary.hourly / ft_salary.hourly as pro_rata from ft_salary join pt_salary on pt_salary.district = ft_salary.district where ft_salary.ma_plus = 0 and ft_salary.step = 1 and pt_salary.ma_plus = 0 and pt_salary.step = 1 order by pro_rata desc;",
     'key' =>  'pro_rata',
     'keydescription' => 'Pro Rata',
     'type' => 'percentage'
@@ -98,7 +98,7 @@ $reports = array(
   array(
     'category' => 'PT/FT Pro Rata',
     'description' => "PT/FT Pro Rata, Master's Degree, Steps 5 (PT) 6 (FT)",
-    'query' => "select district.district, ROUND(pt_salary.hourly / ft_salary.hourly, 3) as pro_rata from district join ft_salary on ft_salary.district = district.district and ft_salary.ma_plus = 0 and ft_salary.step = 6 join pt_salary on pt_salary.district = district.district and pt_salary.ma_plus = 0 and pt_salary.step = 5 group by district.district order by pro_rata desc;",
+    'query' => "select ft_salary.district, pt_salary.hourly / ft_salary.hourly as pro_rata from ft_salary join pt_salary on pt_salary.district = ft_salary.district where ft_salary.ma_plus = 0 and ft_salary.step = 6 and pt_salary.ma_plus = 0 and pt_salary.step = 5 order by pro_rata desc;",
     'key' =>  'pro_rata',
     'keydescription' => 'Pro Rata',
     'type' => 'percentage'
@@ -106,7 +106,7 @@ $reports = array(
   array(
     'category' => 'PT/FT Pro Rata',
     'description' => "PT/FT Pro Rata, Master's Degree + 30 Units, Steps 10 (PT) 11 (FT)",
-    'query' => "select district.district, ROUND(pt_salary.hourly / ft_salary.hourly, 3) as pro_rata from district join ft_salary on ft_salary.district = district.district and ft_salary.ma_plus = 30 and ft_salary.step = 11 join pt_salary on pt_salary.district = district.district and pt_salary.ma_plus = 30 and pt_salary.step = 10 group by district.district order by pro_rata desc;",
+    'query' => "select ft_salary.district, pt_salary.hourly / ft_salary.hourly as pro_rata from ft_salary join pt_salary on pt_salary.district = ft_salary.district where ft_salary.ma_plus = 30 and ft_salary.step = 11 and pt_salary.ma_plus = 30 and pt_salary.step = 10 order by pro_rata desc;",
     'key' =>  'pro_rata',
     'keydescription' => 'Pro Rata',
     'type' => 'percentage'
@@ -114,7 +114,7 @@ $reports = array(
   array(
     'category' => 'PT/FT Pro Rata',
     'description' => "PT/FT Pro Rata, PhD, Maximum Salary",
-    'query' => "select district.district, ROUND(pt_salary.hourly / ft_salary.hourly, 3) as pro_rata from district join ft_salary on ft_salary.district = district.district and ft_salary.ma_plus = 100 join pt_salary on pt_salary.district = district.district and pt_salary.ma_plus = 100 group by district.district order by pro_rata desc;",
+    'query' => "select ft_salary.district, pt_salary.hourly / ft_salary.hourly as pro_rata from ft_salary join pt_salary on pt_salary.district = ft_salary.district where ft_salary.ma_plus = 100 and pt_salary.ma_plus = 100 order by pro_rata desc;",
     'key' =>  'pro_rata',
     'keydescription' => 'Pro Rata',
     'type' => 'percentage'
@@ -266,8 +266,8 @@ for ($i = 0; $i < count($reports); ++$i) {
 ?>
 </div>
 </form>
-</footer>
 <hr>
+</header>
 <?php
 if (isset($report)) {
   $highlight = urldecode($_SESSION['highlight']);
@@ -284,7 +284,7 @@ if (isset($report)) {
       .round((1-(floatval($i)/$numRows)) * 256)
       .',0)';
     if ($results[$i]['district'] == $highlight)
-      $style = " style='background: yellow; font-weight: bold'";
+      $style = " class='highlight'";
     else
       $style = '';
     echo "<tr$style onclick='highlight(\"".$results[$i]['district']."\")'><td>"
@@ -309,11 +309,11 @@ if (isset($report)) {
   }
   ?>
 </table>
-<hr>
 <?php
 }
 ?>
 <footer>
+<hr>
 Notes:
 <ul>
 <li>Salary data courtesy Joanna Valentine at CFT, and is currently based on 2016-2017 salary schedules.</li>

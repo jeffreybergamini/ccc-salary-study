@@ -16,7 +16,7 @@ Chaffey College	5885 Haven Avenue	Rancho Cucamonga	CA	91737	Community College	58
 Citrus College	1000 West Foothill Boulevard	Glendora	CA	91741	Community College	1000 W Foothill Blvd, Glendora, CA, 91741	Citrus Community College District	(626) 963-0323	http://www.citruscollege.edu
 Coastline Community College	11460 Warner Avenue	Fountain Valley	CA	92708	Community College	11460 Warner Ave, Fountain Valley, CA, 92708	Coast Community College District	(714) 546-7600	http://www.coastline.edu
 Columbia College	11600 Columbia College Drive	Sonora	CA	95370	Community College	11600 Columbia College Dr, Sonora, CA, 95370	Yosemite Community College District	(209) 588-5100	http://www.columbia.yosemite.edu
-Compton Community Educational Center	1111 East Artesia Boulevard	Compton	CA	90221	Community College	1111 E Artesia Blvd, Compton, CA, 90221	El Camino Community College District	(310) 900-1600	http://www.compton.edu
+Compton Community Educational Center	1111 East Artesia Boulevard	Compton	CA	90221	Community College	1111 E Artesia Blvd, Compton, CA, 90221	Compton Community College District	(310) 900-1600	http://www.compton.edu
 Contra Costa College	2600 Mission Bell Drive	San Pablo	CA	94806	Community College	2600 Mission Bell Dr, San Pablo, CA, 94806	Contra Costa Community College District	(510) 235-7800	http://www.contracosta.edu
 Copper Mountain College	6162 Rotary Wy	Joshua Tree	CA	92252	Community College	6162 Rotary Way, Joshua Tree, CA  92252	Copper Mountain Community College District	(760) 366-3791	http://www.cmccd.edu
 Cosumnes River College	8401 Center Parkway	Sacramento	CA	95823	Community College	8401 Center Pkwy, Sacramento, CA, 95823	Los Rios Community College District	(916) 691-7344	http://www.crc.losrios.edu

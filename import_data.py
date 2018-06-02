@@ -3,6 +3,7 @@ import csv
 import difflib
 import math
 import numpy
+import re
 import sqlite3
 import sys
 
@@ -56,13 +57,16 @@ with sqlite3.connect('salary-data.sqlite') as conn:
         raw_name = tokens[7]
         zip_code = int(tokens[4])
         # Make sure we match CFT's district names
-        try:
-            best_match = next(cft_name for cft_name in cft_district_names if cft_name.lower().find(raw_name.lower()) >= 0 or raw_name.lower().find(cft_name.lower()) >= 0)
-        except:
-            match_tuple = max((difflib.SequenceMatcher(None, raw_name, cft_name).ratio(), cft_name) for cft_name in cft_district_names)
-            best_match = match_tuple[1]
+        best_match = None
+        for words in (3, 2, 1):
+            matches = [cft_name for cft_name in cft_district_names if re.split('[ -/.]+', cft_name.lower())[:words] == re.split('[ -/.]+', raw_name.lower())[:words]]
+            if len(matches) == 1:
+                best_match = matches[0]
+                break
+        if best_match is None:
+            best_match = max((difflib.SequenceMatcher(None, raw_name, cft_name).ratio(), cft_name) for cft_name in cft_district_names)[1]
         db.execute("INSERT INTO district (district, zip) VALUES (?, ?)", (best_match, zip_code))
-
+    
   # DB: CREATE TABLE home_value (zip INTEGER, zhvi INTEGER, qinc INTEGER);
   # File: "Date","RegionID","RegionName","State","Metro","County","City","SizeRank","Zhvi","MoM","QoQ","YoY","5Year","10Year","PeakMonth","PeakQuarter","PeakZHVI","PctFallFromPeak","LastTimeAtCurrZHVI"
   # Ref for qualifiying income: https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index/methodology
@@ -76,7 +80,6 @@ with sqlite3.connect('salary-data.sqlite') as conn:
             qinc = round(pmt * 4 * 12)
             db.execute("INSERT INTO home_value (zip, zhvi, qinc) VALUES (?, ?, ?)", (zip_code, zhvi, qinc))
 
-  # DB: CREATE TABLE zip (zip INTEGER PRIMARY KEY, latitude REAL, longitude REAL);
   # File: zip lat lon (in degrees)
   with open('zip_codes.txt') as zips_file:
     for zip_line in zips_file:
@@ -85,7 +88,6 @@ with sqlite3.connect('salary-data.sqlite') as conn:
       lat = math.radians(float(lat))
       lon = math.radians(float(lon))
       zips[zip_code] = (lat, lon)
-      db.execute("INSERT INTO zip (zip, latitude, longitude) VALUES (?, ?, ?)", (zip_code, lat, lon))
 
   # DB: CREATE TABLE zip_distance (src INTEGER, dst INTEGER, distance REAL);
   for zip1 in zips:

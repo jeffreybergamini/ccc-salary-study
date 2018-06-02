@@ -28,10 +28,6 @@ CREATE TABLE district (district TEXT, zip INTEGER);
 CREATE INDEX district_district_idx ON district(district);
 CREATE INDEX district_zip_idx ON district(zip);
 
--- All ZIP codes
-CREATE TABLE zip (zip INTEGER PRIMARY KEY, latitude REAL, longitude REAL);
-CREATE INDEX zip_zip_idx ON zip(zip);
-
 -- Distance between ZIP codes
 CREATE TABLE zip_distance (src INTEGER, dst INTEGER, distance REAL);
 CREATE INDEX zip_distance_src_idx ON zip_distance(src);
