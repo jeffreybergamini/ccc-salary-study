@@ -8,6 +8,12 @@ h1 {
 tr:hover {
   background: lightgreen;
 }
+th {
+  border-bottom: 1px solid;
+}
+td, th {
+  padding-right: 1em;
+}
 table {
   border-collapse: collapse;
 }

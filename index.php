@@ -274,7 +274,7 @@ if (isset($report)) {
 ?>
   <h1><?=$report['description']?></h1>
   <table>
-  <tr><th>Rank</th><th>District</th><th><?=(isset($report) ? $report['keydescription'] : 'TBD')?></th></tr>
+  <tr><th>Rank</th><th>Percentile</th><th>District</th><th><?=(isset($report) ? $report['keydescription'] : 'TBD')?></th></tr>
   <?php
   $numRows = count($results);
   for ($i = 0; $i < $numRows; ++$i) {
@@ -295,7 +295,14 @@ if (isset($report)) {
       echo '(Median)';
     if ($i == floor($numRows * 3 / 4))
       echo '(End of third quartile)';
-    echo '</td><td>'.$results[$i]['district'].'</td><td>';
+    $numBelow = 0;
+    for ($j = 0; $j < $numRows; ++$j) {
+      if ($results[$j][$report['key']] < $results[$i][$report['key']])
+        ++$numBelow;
+    }
+    $percentile = round(100.0 * $numBelow / $numRows);
+    echo "<td>$percentile%</td>";
+    echo '<td>'.$results[$i]['district'].'</td><td>';
     if ($report['type'] == 'percentage')
       echo number_format($results[$i][$report['key']] * 100, 2).'%';
     elseif ($report['type'] == 'dollars')
