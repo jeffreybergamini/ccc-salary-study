@@ -284,10 +284,10 @@ if (isset($report)) {
       .round((1-(floatval($i)/$numRows)) * 256)
       .',0)';
     if ($results[$i]['district'] == $highlight)
-      $style = " class='highlight'";
+      echo "<tr class='highlight'><td>"
+      .($i + 1).' ';
     else
-      $style = '';
-    echo "<tr$style onclick='highlight(\"".$results[$i]['district']."\")'><td>"
+      echo "<tr onclick='highlight(\"".$results[$i]['district']."\")'><td>"
       .($i + 1).' ';
     if ($i == floor($numRows / 4))
       echo '(End of first quartile)';
