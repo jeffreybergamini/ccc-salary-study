@@ -31,13 +31,13 @@ with sqlite3.connect('salary-data.sqlite') as conn:
   #  17 ½ weeks x 9 units = 157.50 hours a semester
   #  Full-time hours were considered to be 40 hours (30 hours class and prep, 5 office hours, 5 governance and committees)
   #  35 weeks x 15 units (hours) = 525 hours annually
-  #  To convert full-time annual salary to hourly the formula used was: (Full-time annual salary x .75)/525
+  #  To convert full-time annual salary to hourly the formula used was: (Full-time annual salary x .875)/525
   with open('cft-ft-2016-2017.txt') as ft_file:
     for ft_line in ft_file:
         tokens = ft_line.split('\t')
         district, ma_plus, step, salary = tokens[0], int(tokens[1]), int(tokens[2]), int(tokens[3])
-        #hourly = salary * .75 / 525
-        hourly = salary / 525
+        hourly = salary * .875 / 525
+        #hourly = salary / 525
         db.execute("INSERT INTO ft_salary (district, ma_plus, step, salary, hourly) VALUES (?, ?, ?, ?, ?)", (district, ma_plus, step, salary, hourly))
         cft_district_names.add(district)
 

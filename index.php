@@ -326,7 +326,7 @@ Notes:
 <li>Salary data courtesy Joanna Valentine at <a href="http://cft.org/">CFT</a>, and is currently based on 2016-2017 salary schedules.</li>
 <li>Home loan qualification based on the <a href="https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index/methodology">National Association of Realtors's qualifying income formula</a>, with home values pulled from the <a href="https://www.zillow.com/research/data/">Zillow Home Value index</a> (currently for April 2018). Assumed interest rate is 4.5%.</li>
 <li>PT rates in relevant districts have been adjusted to incorporate additional pay for required office hours, assuming a maximum part-time workload (10 semester units).</li>
-<li>PT/FT pro rata is computed using 100% of both full-time and part-time rates, since all relevant PT rates have been adjusted to incorporate pay for required office hours.</li>
+<li>PT/FT pro rata is computed using 100% of part-time rates and 87.5% of full-time rates, since all relevant PT rates have been adjusted to incorporate pay for required office hours but do not involve pay for governance etc., usually acknowledged to account for roughly 1/8 of full-time compensation.</li>
 <li>Median home price and radius is calculated as follows: All ZIP codes with centroids no further than the stated radius from the centroid of any ZIP code in the district are included in the calculuations. The price used here is the average of the Zillow Home Value index in those ZIP codes.</li>
 <li>Source code and data <a href="https://github.com/jeffreybergamini/ccc-salary-study">available on GitHub</a>.</li>
 </ul>
