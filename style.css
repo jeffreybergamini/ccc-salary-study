@@ -39,15 +39,19 @@ button:hover {
   h1 {
     padding: 0px;
     margin: 0px;
+    font-size: 12px;
   }
   header, footer {
     display: none;
   }
   body {
-    font-size: 10px;
+    font-size: 9px;
   }
   .highlight {
     border: 1px dashed;
     font-weight: bold;
+  }
+  td, th, tr {
+    padding: none;
   }
 }
