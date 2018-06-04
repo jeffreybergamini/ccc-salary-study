@@ -35,6 +35,12 @@ button:hover {
   font-weight: bold;
 }
 
+#percentile-gauge {
+  width: 200px;
+  height: 200px;
+  float: right;
+}
+
 @media print {
   h1 {
     padding: 0px;

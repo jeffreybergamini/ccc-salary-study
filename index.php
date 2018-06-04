@@ -273,34 +273,37 @@ if (isset($report)) {
   $highlight = urldecode($_SESSION['highlight']);
 ?>
   <h1><?=$report['description']?></h1>
+  <div id="percentile-gauge"></div>
   <table>
   <tr><th>Rank</th><th>Percentile</th><th>District</th><th><?=(isset($report) ? $report['keydescription'] : 'TBD')?></th></tr>
   <?php
   $numRows = count($results);
   for ($i = 0; $i < $numRows; ++$i) {
-    $bgColor = 'rgb('
-      .round((floatval($i)/$numRows) * 256)
-      .','
-      .round((1-(floatval($i)/$numRows)) * 256)
-      .',0)';
-    if ($results[$i]['district'] == $highlight)
-      echo "<tr class='highlight'><td>"
-      .($i + 1).' ';
-    else
-      echo "<tr onclick='highlight(\"".$results[$i]['district']."\")'><td>"
-      .($i + 1).' ';
-    if ($i == floor($numRows / 4))
-      echo '(End of first quartile)';
-    elseif ($i == intval($numRows / 2) or ($numRows % 2 == 0 and $i == $numRows / 2 or $i == $numRows / 2 - 1))
-      echo '(Median)';
-    if ($i == floor($numRows * 3 / 4))
-      echo '(End of third quartile)';
     $numBelow = 0;
     for ($j = 0; $j < $numRows; ++$j) {
       if ($results[$j][$report['key']] < $results[$i][$report['key']])
         ++$numBelow;
     }
     $percentile = round(100.0 * $numBelow / $numRows);
+    $bgColor = 'rgb('
+      .round((floatval($i)/$numRows) * 256)
+      .','
+      .round((1-(floatval($i)/$numRows)) * 256)
+      .',0)';
+    if ($results[$i]['district'] == $highlight) {
+      echo "<tr class='highlight'><td>"
+      .($i + 1).' ';
+      $gaugePercentile = $percentile;
+    } else {
+      echo "<tr onclick='highlight(\"".$results[$i]['district']."\")'><td>"
+      .($i + 1).' ';
+    }
+    if ($i == floor($numRows / 4))
+      echo '(End of first quartile)';
+    elseif ($i == intval($numRows / 2) or ($numRows % 2 == 0 and $i == $numRows / 2 or $i == $numRows / 2 - 1))
+      echo '(Median)';
+    if ($i == floor($numRows * 3 / 4))
+      echo '(End of third quartile)';
     echo "<td>$percentile%</td>";
     echo '<td>'.$results[$i]['district'].'</td><td>';
     if ($report['type'] == 'percentage')
@@ -331,9 +334,33 @@ Notes:
 <li>Source code and data <a href="https://github.com/jeffreybergamini/ccc-salary-study">available on GitHub</a>.</li>
 </ul>
 </footer>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
 function highlight(district) {
   window.location.replace('./?highlight='+district);
+}
+
+google.charts.load('current', {'packages':['gauge']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  <?php if (!isset($highlight)) echo 'return;'; ?>
+
+	var data = google.visualization.arrayToDataTable([
+		['Label', 'Value'],
+		['<?=$highlight?>', <?=$gaugePercentile?>],
+	]);
+
+	var options = {
+		width: 200, height: 200,
+		min: 0, max: 99,
+		minorTicks: 5
+	};
+
+	var chart = new google.visualization.Gauge(document.getElementById('percentile-gauge'));
+
+	chart.draw(data, options);
 }
 </script>
 </body>
