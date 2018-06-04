@@ -274,7 +274,7 @@ if (isset($report)) {
 ?>
   <h1><?=$report['description']?></h1>
   <div id="percentile-gauge"></div>
-  <table>
+  <table id='rankings-table'>
   <tr><th>Rank</th><th>Percentile</th><th>District</th><th><?=(isset($report) ? $report['keydescription'] : 'TBD')?></th></tr>
   <?php
   $numRows = count($results);
