@@ -210,6 +210,14 @@ $reports = array(
     'keydescription' => 'Average Part-Time Hourly Rate (all steps and education levels mentioned above)',
     'type' => 'dollars'
   ),
+  array(
+    'category' => 'Overall Averages',
+    'description' => "Average PT/FT Pro Rata",
+    'query' => "select ft_salary.district, avg(pt_salary.hourly / ft_salary.hourly) as pro_rata from ft_salary join pt_salary on pt_salary.district = ft_salary.district where (ft_salary.ma_plus = 0 and ft_salary.step = 1 and pt_salary.ma_plus = 0 and pt_salary.step = 1) or (ft_salary.ma_plus = 0 and ft_salary.step = 6 and pt_salary.ma_plus = 0 and pt_salary.step = 5) or (ft_salary.ma_plus = 30 and ft_salary.step = 11 and pt_salary.ma_plus = 30 and pt_salary.step = 10) or (ft_salary.ma_plus = 100 and pt_salary.ma_plus = 100) group by ft_salary.district order by pro_rata desc;",
+    'key' =>  'pro_rata',
+    'keydescription' => 'Average PT/FT Pro Rata (all steps and education levels mentioned above)',
+    'type' => 'percentage'
+  ),
 );
 
 if (isset($_GET['highlight'])) {
