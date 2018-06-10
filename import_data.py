@@ -102,5 +102,30 @@ with sqlite3.connect('salary-data.sqlite') as conn:
       distance = distance_km(lat1, lon1, lat2, lon2)
       if distance <= 70:
           db.execute("INSERT INTO zip_distance (src, dst, distance) VALUES (?, ?, ?)", (zip1, zip2, distance))
+
+  # Average health/dental/vision benefits from State Controller's office
+  # DB: CREATE TABLE hdv_average (district TEXT, facultytype TEXT, avghdv INTEGER);
+  with sqlite3.connect('gcc-2016_CommunityCollegeDistrict.sqlite') as hdvconn:
+    hdvdb = hdvconn.cursor()
+    district_matches = dict()
+    for row in hdvdb.execute('''
+        SELECT EmployerName AS district, FacultyType, avg(HealthDentalVision) as avghdv
+        FROM Employee
+        GROUP BY EmployerName, FacultyType
+        HAVING COUNT(FacultyType) >= 15'''):
+        hdv_district, faculty_type, avg_hdv = row
+        # Make sure we match CFT's district names
+        best_match = None
+        for words in (3, 2, 1):
+            matches = [cft_name for cft_name in cft_district_names if re.split('[ -/.]+', cft_name.lower())[:words] == re.split('[ -/.]+', hdv_district.lower())[:words]]
+            if len(matches) == 1:
+                best_match = matches[0]
+                break
+        if best_match is None:
+            best_match = max((difflib.SequenceMatcher(None, hdv_district, cft_name).ratio(), cft_name) for cft_name in cft_district_names)[1]
+        db.execute("INSERT INTO hdv_average (district, facultytype, avghdv) VALUES (?, ?, ?)", (best_match, faculty_type, avg_hdv))
+    hdvdb.close()
+
+  # Done with our database!
   db.close()
 

@@ -17,6 +17,10 @@ td, th {
 table {
   border-collapse: collapse;
 }
+.results-column {
+  width: 50%;
+  text-align: center;
+}
 button:hover {
   background: lightgreen;
 }

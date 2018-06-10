@@ -32,3 +32,8 @@ CREATE INDEX district_zip_idx ON district(zip);
 CREATE TABLE zip_distance (src INTEGER, dst INTEGER, distance REAL);
 CREATE INDEX zip_distance_src_idx ON zip_distance(src);
 CREATE INDEX zip_distance_dst_idx ON zip_distance(dst);
+
+-- Health/Dental/Vision benefits per district (from State Controller's Office dataset)
+CREATE TABLE hdv_average (district TEXT, facultytype TEXT, avghdv INTEGER);
+CREATE INDEX hdv_average_district_idx ON hdv_average(district);
+CREATE INDEX hdv_average_facultytype_idx ON hdv_average(facultytype);

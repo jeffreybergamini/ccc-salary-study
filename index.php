@@ -204,6 +204,14 @@ $reports = array(
   ),
   array(
     'category' => 'Overall Averages',
+    'description' => "Average FT/Median-Home-Price Ratio",
+    'query' => "select district.district, avg(ft_salary.salary) / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst group by district.district order by pro_rata desc;",
+    'key' =>  'pro_rata',
+    'keydescription' => 'Average FT Salary/Median-Home-Price Ratio (all steps and education levels mentioned above, Zillow Home Value Index, 70 km radius)',
+    'type' => 'percentage'
+  ),
+  array(
+    'category' => 'Overall Averages',
     'description' => "Average Part-Time Hourly Rate",
     'query' => "select district, avg(hourly) as hourly from pt_salary group by district order by avg(hourly) desc;",
     'key' =>  'hourly',
@@ -212,10 +220,66 @@ $reports = array(
   ),
   array(
     'category' => 'Overall Averages',
+    'description' => "Average PT/Median-Home-Price Ratio",
+    'query' => "select district.district, avg(pt_salary.hourly * 350) / avg(qinc) as pro_rata from district natural join pt_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst group by district.district order by pro_rata desc;",
+    'key' =>  'pro_rata',
+    'keydescription' => 'Average PT Salary/Median-Home-Price Ratio (maximum part-time workload (66.67%), all steps and education levels mentioned above, Zillow Home Value Index, 70 km radius)',
+    'type' => 'percentage'
+  ),
+  array(
+    'category' => 'Overall Averages',
     'description' => "Average PT/FT Pro Rata",
     'query' => "select ft_salary.district, avg(pt_salary.hourly / ft_salary.hourly) as pro_rata from ft_salary join pt_salary on pt_salary.district = ft_salary.district where (ft_salary.ma_plus = 0 and ft_salary.step = 1 and pt_salary.ma_plus = 0 and pt_salary.step = 1) or (ft_salary.ma_plus = 0 and ft_salary.step = 6 and pt_salary.ma_plus = 0 and pt_salary.step = 5) or (ft_salary.ma_plus = 30 and ft_salary.step = 11 and pt_salary.ma_plus = 30 and pt_salary.step = 10) or (ft_salary.ma_plus = 100 and pt_salary.ma_plus = 100) group by ft_salary.district order by pro_rata desc;",
     'key' =>  'pro_rata',
     'keydescription' => 'Average PT/FT Pro Rata (all steps and education levels mentioned above)',
+    'type' => 'percentage'
+  ),
+  array(
+    'category' => 'Health/Dental/Vision Benefits',
+    'description' => "Average FT Health/Dental/Vision Benefits",
+    'query' => "select district, avghdv from hdv_average where facultytype = 'FT' order by avghdv desc;",
+    'key' =>  'avghdv',
+    'keydescription' => 'Average FT Health/Dental/Vision Benefits (for available data—THIS IS ONLY AN INCOMPLETE AND UNRELIABLE ROUGH ESTIMATE)',
+    'type' => 'dollars'
+  ),
+  array(
+    'category' => 'Health/Dental/Vision Benefits',
+    'description' => "Average FT Salary Including Health/Dental/Vision Benefits",
+    'query' => "select ft_salary.district, avg(ft_salary.salary) + (select avghdv from hdv_average where hdv_average.district = ft_salary.district and facultytype = 'FT') as salarywithbenefits from ft_salary group by ft_salary.district having salarywithbenefits is not null order by salarywithbenefits desc;",
+    'key' =>  'salarywithbenefits',
+    'keydescription' => 'Average FT Salary Including Health/Dental/Vision Benefits (all steps and education levels mentioned above, for available data—THIS IS ONLY AN INCOMPLETE AND UNRELIABLE ROUGH ESTIMATE)',
+    'type' => 'dollars'
+  ),
+  array(
+    'category' => 'Health/Dental/Vision Benefits',
+    'description' => "Average FT Salary Including Health/Dental/Vision Benefits vs. Home Price",
+    'query' => "select ft_salary.district, (avg(ft_salary.salary) + (select avghdv from hdv_average where hdv_average.district = ft_salary.district and facultytype = 'FT')) / avg(qinc) as pro_rata from district natural join ft_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst group by district.district having pro_rata is not null order by pro_rata desc;",
+    'key' =>  'pro_rata',
+    'keydescription' => 'Average Ratio of FT Salary Including Health/Dental/Vision Benefits to Median Home Price (Zillow Home Value Index, 70 km radius, all steps and education levels mentioned above, for available data—THIS IS ONLY AN INCOMPLETE AND UNRELIABLE ROUGH ESTIMATE)',
+    'type' => 'percentage'
+  ),
+  array(
+    'category' => 'Health/Dental/Vision Benefits',
+    'description' => "Average PT Health/Dental/Vision Benefits",
+    'query' => "select district, avghdv from hdv_average where facultytype = 'PT' order by avghdv desc;",
+    'key' =>  'avghdv',
+    'keydescription' => 'Average PT Health/Dental/Vision Benefits (for available data—THIS IS ONLY AN INCOMPLETE AND UNRELIABLE ROUGH ESTIMATE)',
+    'type' => 'dollars'
+  ),
+  array(
+    'category' => 'Health/Dental/Vision Benefits',
+    'description' => "Average PT Salary Including Health/Dental/Vision Benefits",
+    'query' => "select pt_salary.district, avg(pt_salary.hourly * 350) + (select avghdv from hdv_average where hdv_average.district = pt_salary.district and facultytype = 'PT') as salarywithbenefits from pt_salary group by pt_salary.district having salarywithbenefits is not null order by salarywithbenefits desc;",
+    'key' =>  'salarywithbenefits',
+    'keydescription' => 'Average PT Salary Including Health/Dental/Vision Benefits (all steps and education levels mentioned above, maximum part-time workload (66.67%), for available data—THIS IS ONLY AN INCOMPLETE AND UNRELIABLE ROUGH ESTIMATE)',
+    'type' => 'dollars'
+  ),
+  array(
+    'category' => 'Health/Dental/Vision Benefits',
+    'description' => "Average PT Salary Including Health/Dental/Vision Benefits vs. Home Price",
+    'query' => "select pt_salary.district, (avg(pt_salary.hourly * 350) + (select avghdv from hdv_average where hdv_average.district = pt_salary.district and facultytype = 'PT')) / avg(qinc) as pro_rata from district natural join pt_salary join zip_distance on zip_distance.src = district.zip and distance < 70 join home_value on home_value.zip = zip_distance.dst group by district.district having pro_rata is not null order by pro_rata desc;",
+    'key' =>  'pro_rata',
+    'keydescription' => 'Average Ratio of PT Salary Including Health/Dental/Vision Benefits to Median Home Price (Zillow Home Value Index, 70 km radius, all steps and education levels mentioned above, maximum part-time workload (66.67%), for available data—THIS IS ONLY AN INCOMPLETE AND UNRELIABLE ROUGH ESTIMATE)',
     'type' => 'percentage'
   ),
 );
@@ -228,6 +292,7 @@ if (isset($_GET['highlight'])) {
 }
 
 if (isset($_GET['report'])
+  and is_numeric($_GET['report'])
   and is_integer(intval($_GET['report']))
   and $_GET['report'] >= 0
   and $_GET['report'] < count($reports)) {
@@ -283,7 +348,7 @@ if (isset($report)) {
   <h1><?=$report['description']?></h1>
   <div id="percentile-gauge"></div>
   <table id='rankings-table'>
-  <tr><th>Rank</th><th>Percentile</th><th>District</th><th><?=(isset($report) ? $report['keydescription'] : 'TBD')?></th></tr>
+  <tr><th>Rank</th><th>Percentile</th><th>District</th><th class='results-column'><?=(isset($report) ? $report['keydescription'] : 'TBD')?></th></tr>
   <?php
   $numRows = count($results);
   for ($i = 0; $i < $numRows; ++$i) {
@@ -313,7 +378,7 @@ if (isset($report)) {
     if ($i == floor($numRows * 3 / 4))
       echo '(End of third quartile)';
     echo "<td>$percentile%</td>";
-    echo '<td>'.$results[$i]['district'].'</td><td>';
+    echo '<td>'.$results[$i]['district'].'</td><td class="results-column">';
     if ($report['type'] == 'percentage')
       echo number_format($results[$i][$report['key']] * 100, 2).'%';
     elseif ($report['type'] == 'dollars')
@@ -339,6 +404,7 @@ Notes:
 <li>PT rates in relevant districts have been adjusted to incorporate additional pay for required office hours, assuming a maximum part-time workload (10 semester units).</li>
 <li>PT/FT pro rata is computed using 100% of part-time rates and 87.5% of full-time rates, since all relevant PT rates have been adjusted to incorporate pay for required office hours but do not involve pay for governance etc., usually acknowledged to account for roughly 1/8 of full-time compensation.</li>
 <li>Median home price and radius is calculated as follows: All ZIP codes with centroids no further than the stated radius from the centroid of any ZIP code in the district are included in the calculuations. The price used here is the average of the Zillow Home Value index in those ZIP codes.</li>
+<li>Health/Dental/Vision benefits data come from <a href="http://publicpay.ca.gov/Reports/RawExport.aspx#2016_6">"Government Compensation in California" reports from the State Controller's office</a>. The most recent data is from 2016. Not all districts report position titles that make it possible to separate faculty from other employees, or FT from PT faculty, so not all districts are included in these reports, and the data should be considered a rough and inaccurate estimate only.</li>
 <li>Source code and data <a href="https://github.com/jeffreybergamini/ccc-salary-study">available on GitHub</a>.</li>
 </ul>
 </footer>
