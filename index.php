@@ -319,7 +319,6 @@ if (isset($_GET['report'])
   </head>
 <body>
 <header>
-<form action="." method="GET">
 <h1><a href=".">California Community Colleges Salary Study</a> - <a href="/">Jeffrey Bergamini</a> - <a href="https://www.cabrillo.edu">Cabrillo College</a></h1>
 <?php
 $prevCategory = '';
@@ -333,8 +332,9 @@ for ($i = 0; $i < count($reports); ++$i) {
   $desc = $reports[$i]['description'];
   $style = '';
   if (isset($_GET['report']) and $i == $_GET['report'])
-    $style = " class='active-button'";
-  echo "<button type='submit' name='report' value='$i'$style>$desc</button>";
+    echo "<a class='report active-report' href='?report=$i'>$desc</a>";
+  else
+    echo "<a class='report' href='?report=$i'>$desc</a>";
 }
 ?>
 </div>

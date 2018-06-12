@@ -21,10 +21,21 @@ table {
   width: 50%;
   text-align: center;
 }
-button:hover {
+.report {
+  text-decoration: none;
+  font-size: 75%;
+  color: black;
+  display: inline-block;
+  background: #f0f0ff;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0px 3px 0px 3px;
+  margin: 3px;
+}
+.report:hover {
   background: lightgreen;
 }
-.active-button {
+.active-report {
   background: yellow;
 }
 .report-category {
