@@ -4,6 +4,7 @@ DBFILE=gcc-2016_CommunityCollegeDistrict.sqlite
 >$DBFILE
 sqlite3 $DBFILE '''
 CREATE TABLE Employee (EmployerName TEXT, Position TEXT, RegularPay INTEGER, OvertimePay INTEGER, LumpSumPay INTEGER, OtherPay INTEGER, TotalWages INTEGER,  HealthDentalVision INTEGER, FacultyType TEXT);
+CREATE TABLE StudentCount (EmployerName TEXT, HeadCount INTEGER);
 '''
 
 # Import data
@@ -11,8 +12,12 @@ python3 gcc-2016_CommunityCollegeDistrict.py
 
 # DB Indexes
 for col in EmployerName Position RegularPay OvertimePay LumpSumPay OtherPay TotalWages HealthDentalVision FacultyType; do
-  sqlite3 $DBFILE "CREATE INDEX idx$col ON Employee($col);"
+  sqlite3 $DBFILE "CREATE INDEX idxEmployee$col ON Employee($col);"
 done 
+for col in EmployerName HeadCount; do
+  sqlite3 $DBFILE "CREATE INDEX idxStudentCount$col ON StudentCount($col);"
+done 
+
 
 # Estimate FT/PT faculty
 sqlite3 -cmd '.load /usr/lib/sqlite3/pcre.so' $DBFILE '''

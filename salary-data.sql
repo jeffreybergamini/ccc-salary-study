@@ -23,9 +23,10 @@ CREATE TABLE home_value (zip INTEGER, zhvi INTEGER, qinc INTEGER);
 CREATE INDEX home_value_zip_idx ON home_value(zip);
 CREATE INDEX home_value_idx ON home_value(zhvi);
 
--- Districts and their main ZIP codes
-CREATE TABLE district (district TEXT, zip INTEGER);
+-- Districts and their head counts and main ZIP codes
+CREATE TABLE district (district TEXT, headcount INTEGER, zip INTEGER);
 CREATE INDEX district_district_idx ON district(district);
+CREATE INDEX district_headcount_idx ON district(headcount);
 CREATE INDEX district_zip_idx ON district(zip);
 
 -- Distance between ZIP codes

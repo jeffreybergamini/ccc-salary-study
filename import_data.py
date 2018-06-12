@@ -54,7 +54,7 @@ with sqlite3.connect('salary-data.sqlite') as conn:
         db.execute("INSERT INTO pt_salary (district, ma_plus, step, hourly) VALUES (?, ?, ?, ?)", (district, ma_plus, step, hourly))
         cft_district_names.add(district)
    
-  # DB: CREATE TABLE district (district TEXT, zip INTEGER);
+  # DB: CREATE TABLE district (district TEXT, headcount INTEGER, zip INTEGER);
   # File: Title;Street Address;City;State;Zip;Program Category Label;Freeform Address;Community College District;Phone #;Website
   with open('ca-community-colleges.txt') as districts_file:
     for district_line in districts_file:
@@ -72,6 +72,24 @@ with sqlite3.connect('salary-data.sqlite') as conn:
             best_match = max((difflib.SequenceMatcher(None, raw_name, cft_name).ratio(), cft_name) for cft_name in cft_district_names)[1]
         db.execute("INSERT INTO district (district, zip) VALUES (?, ?)", (best_match, zip_code))
     
+  # DB: CREATE TABLE district (district TEXT, headcount INTEGER, zip INTEGER);
+  # File: District;Enrollment
+  with open('StudentEnrollmentStatus.txt') as enrollments_file:
+    for enrollment_line in enrollments_file:
+        tokens = enrollment_line.split('\t')
+        raw_name = tokens[0]
+        head_count = int(tokens[1])
+        # Make sure we match CFT's district names
+        best_match = None
+        for words in (3, 2, 1):
+            matches = [cft_name for cft_name in cft_district_names if re.split('[ -/.]+', cft_name.lower())[:words] == re.split('[ -/.]+', raw_name.lower())[:words]]
+            if len(matches) == 1:
+                best_match = matches[0]
+                break
+        if best_match is None:
+            best_match = max((difflib.SequenceMatcher(None, raw_name, cft_name).ratio(), cft_name) for cft_name in cft_district_names)[1]
+        db.execute("UPDATE district SET headcount = ? WHERE district = ?", (head_count, best_match))
+
   # DB: CREATE TABLE home_value (zip INTEGER, zhvi INTEGER, qinc INTEGER);
   # File: "Date","RegionID","RegionName","State","Metro","County","City","SizeRank","Zhvi","MoM","QoQ","YoY","5Year","10Year","PeakMonth","PeakQuarter","PeakZHVI","PctFallFromPeak","LastTimeAtCurrZHVI"
   # Ref for qualifiying income: https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index/methodology

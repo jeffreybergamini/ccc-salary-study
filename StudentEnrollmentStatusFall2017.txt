@@ -1,0 +1,70 @@
+Allan Hancock CCD	14070
+Antelope CCD	14298
+Barstow CCD	2927
+Cabrillo CCD	11699
+Cerritos CCD	23681
+Chabot-Las Positas CCD	22761
+Chaffey CCD	22903
+Citrus CCD	13358
+Coast CCD	43716
+Compton CCD	7422
+Contra Costa CCD	35303
+Copper Mountain	1957
+Desert CCD	12453
+El Camino CCD	24349
+Feather River CCD	2085
+Foothill CCD	36174
+Gavilan CCD	6951
+Glendale CCD	18847
+Grossmont CCD	26878
+Hartnell CCD	11997
+Imperial CCD	8684
+Kern CCD	32072
+Lake Tahoe CCD	2137
+Lassen CCD	2213
+Long Beach CCD	25823
+Los Rios CCD	74011
+Marin CCD	6896
+Mendocino CCD	3963
+Merced CCD	11552
+MiraCosta CCD	16330
+Monterey CCD	8171
+Mt. San Antonio CCD	37864
+Mt. San Jacinto CCD	16838
+Napa CCD	6326
+North Orange CCD	53320
+Ohlone CCD	9056
+Palo Verde CCD	4032
+Palomar CCD	24557
+Pasadena CCD	30058
+Peralta CCD	29273
+Rancho Santiago CCD	53688
+Redwoods CCD	4837
+Rio Hondo CCD	20216
+Riverside CCD	40124
+San Bernardino CCD	19524
+San Diego CCD	71937
+San Francisco CCD	46364
+San Joaquin Delta CCD	17292
+San Jose CCD	18849
+San Luis Obispo CCD	11597
+San Mateo CCD	24133
+Santa Barbara CCD	16796
+Santa Clarita CCD	20164
+Santa Monica CCD	31720
+Sequoias CCD	12614
+Shasta Tehama CCD	9154
+Sierra CCD	18315
+Siskiyous CCD	3345
+Solano CCD	9515
+Sonoma CCD	25521
+South Orange County CCD	40759
+Southwestern CCD	19783
+State Center CCD	40710
+Ventura CCD	34333
+Victor Valley CCD	11621
+West Hills CCD	7548
+West Kern CCD	5128
+West Valley CCD	14657
+Yosemite CCD	20941
+Yuba CCD	8919
