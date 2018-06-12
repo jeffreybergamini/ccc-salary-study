@@ -396,7 +396,6 @@ if (isset($report)) {
 }
 ?>
 <footer>
-<hr>
 Notes:
 <ul>
 <li>Salary data courtesy Joanna Valentine at <a href="http://cft.org/">CFT</a>, and is currently based on 2016-2017 salary schedules.</li>

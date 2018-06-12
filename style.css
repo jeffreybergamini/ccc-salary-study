@@ -23,7 +23,7 @@ table {
   text-align: center;
 }
 a {
-  color: #004090;
+  color: #0040b0;
   text-decoration: none;
 }
 a:hover {
@@ -56,7 +56,12 @@ a:hover {
   background: yellow;
   font-weight: bold;
 }
-
+footer {
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
 #percentile-gauge {
   width: 200px;
   height: 200px;
