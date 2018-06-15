@@ -10,14 +10,14 @@ other_pt = collections.defaultdict(list)
 with open('cabrillo-college-2016.csv') as cabrillo_csv:
   for csv_line in csv.reader(cabrillo_csv):
     if csv_line[1] == 'Adjunct Instructor':
-      cabrillo_pt[tuple(csv_line[0].lower().split())] = csv_line
+      cabrillo_pt[tuple(token for token in csv_line[0].lower().split() if len(token) > 1)] = csv_line
 
 for root, dirs, files in os.walk('.'):
   for csv_filename in files:
     if csv_filename.endswith(".csv") and not csv_filename.startswith('cabrillo'):
       with open(csv_filename) as csv_file:
         for csv_line in csv.reader(csv_file):
-          for name_order in itertools.permutations(csv_line[0].lower().split()):
+          for name_order in itertools.permutations(token for token in  csv_line[0].lower().split() if len(token) > 1):
             if name_order in cabrillo_pt:
               other_pt[name_order].append(csv_line)
 
